@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajkumar - Portfolio</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#6366f1',secondary:'#ec4899'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+html {
+scroll-behavior: smooth;
+}
+body {
+font-family: 'Inter', sans-serif;
+}
+.typing-effect::after {
+content: "|";
+animation: blink 1s infinite;
+}
+@keyframes blink {
+0%, 100% { opacity: 1; }
+50% { opacity: 0; }
+}
+.skill-bar {
+position: relative;
+height: 8px;
+border-radius: 4px;
+background-color: #e5e7eb;
+overflow: hidden;
+}
+.skill-progress {
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+border-radius: 4px;
+transition: width 1s ease-in-out;
+}
+.project-card:hover .project-overlay {
+opacity: 1;
+}
+.project-card:hover img {
+transform: scale(1.05);
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: #3b82f6;
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #d1d5db;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #3b82f6;
+border-color: #3b82f6;
+}
+.custom-checkbox:checked::after {
+content: "";
+position: absolute;
+top: 3px;
+left: 6px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.scroll-indicator {
+animation: bounce 2s infinite;
+}
+@keyframes bounce {
+0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+40% { transform: translateY(-10px); }
+60% { transform: translateY(-5px); }
+}
+.back-to-top {
+opacity: 0;
+visibility: hidden;
+transition: all 0.3s ease;
+}
+.back-to-top.show {
+opacity: 1;
+visibility: visible;
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Header -->
+<header class="fixed top-0 left-0 w-full bg-white bg-opacity-95 shadow-sm z-50 transition-all duration-300">
+<div class="container mx-auto px-6 py-4 flex justify-between items-center">
+<a href="#" class="text-2xl font-bold text-gray-900 tracking-tight">RAJKUMAR</a>
+<nav class="hidden md:flex space-x-8">
+<a href="#home" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Home</a>
+<a href="#about" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">About</a>
+<a href="#skills" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Skills</a>
+<a href="#projects" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Projects</a>
+<a href="#contact" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Contact</a>
+</nav>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700" id="mobile-menu-button">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+<!-- Mobile Menu -->
+<div class="md:hidden hidden bg-white absolute w-full shadow-md" id="mobile-menu">
+<div class="container mx-auto px-6 py-3 flex flex-col space-y-4">
+<a href="#home" class="text-gray-700 hover:text-primary py-2 transition-colors duration-300 font-medium">Home</a>
+<a href="#about" class="text-gray-700 hover:text-primary py-2 transition-colors duration-300 font-medium">About</a>
+<a href="#skills" class="text-gray-700 hover:text-primary py-2 transition-colors duration-300 font-medium">Skills</a>
+<a href="#projects" class="text-gray-700 hover:text-primary py-2 transition-colors duration-300 font-medium">Projects</a>
+<a href="#contact" class="text-gray-700 hover:text-primary py-2 transition-colors duration-300 font-medium">Contact</a>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section id="home" class="relative min-h-screen flex items-center" style="background-image: url('https://readdy.ai/api/search-image?query=vibrant%20and%20colorful%20abstract%20background%20with%20gradient%20waves%2C%20modern%20geometric%20shapes%2C%20dynamic%20design%20elements%2C%20professional%20portfolio%20background%20with%20indigo%20and%20pink%20accents%2C%20high%20quality%20digital%20art&width=1920&height=1080&seq=1&orientation=landscape'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-gradient-to-r from-indigo-900 to-transparent opacity-80"></div>
+<div class="container mx-auto px-6 py-20 relative z-10">
+<div class="max-w-2xl">
+<h1 class="text-4xl md:text-6xl font-bold text-white mb-4">Hi, I'm Rajkumar</h1>
+<h2 class="text-xl md:text-3xl font-medium text-white mb-8 typing-effect" id="typing-text">Web Developer</h2>
+<p class="text-gray-200 text-lg mb-10 max-w-lg">I create exceptional digital experiences through clean code and thoughtful design. Let's build something amazing together.</p>
+<div class="flex flex-wrap gap-4">
+<a href="#projects" class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-blue-600 transition-colors duration-300 whitespace-nowrap">View My Work</a>
+<a href="#contact" class="bg-transparent border-2 border-white text-white px-6 py-3 !rounded-button font-medium hover:bg-white hover:text-gray-900 transition-all duration-300 whitespace-nowrap">Get in Touch</a>
+</div>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white scroll-indicator">
+<div class="w-8 h-12 flex items-center justify-center">
+<i class="ri-arrow-down-line ri-xl"></i>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+<div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+</div>
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="w-full md:w-5/12">
+<div class="rounded-lg overflow-hidden shadow-lg">
+<img src="https://static.readdy.ai/image/6ea45bb00471721afa21e5e2bfea0f6d/a3c7755ff61ed55139ead67d1a107620.jpeg" alt="Rajkumar" class="w-full h-auto object-cover">
+</div>
+</div>
+<div class="w-full md:w-7/12">
+<h3 class="text-2xl font-bold text-gray-900 mb-4">Who I Am</h3>
+<p class="text-gray-700 mb-6 leading-relaxed">I'm a passionate web developer and designer with over 5 years of experience creating beautiful, functional websites and applications. Based in Bangalore, I specialize in front-end development with expertise in modern JavaScript frameworks and responsive design principles.</p>
+<p class="text-gray-700 mb-8 leading-relaxed">My journey began with a degree in Computer Science, followed by roles at various tech companies where I honed my skills in web development, UI/UX design, and project management. I believe in creating digital experiences that are not only visually appealing but also intuitive and accessible to all users.</p>
+<div class="mb-8">
+<h4 class="text-xl font-semibold text-gray-900 mb-4">Professional Journey</h4>
+<div class="space-y-4">
+<div class="flex">
+<div class="w-24 flex-shrink-0 text-gray-500">2023-Present</div>
+<div>
+<h5 class="font-medium text-gray-900">Senior Frontend Developer</h5>
+<p class="text-gray-700">TechInnovate Solutions</p>
+</div>
+</div>
+<div class="flex">
+<div class="w-24 flex-shrink-0 text-gray-500">2020-2023</div>
+<div>
+<h5 class="font-medium text-gray-900">Web Developer</h5>
+<p class="text-gray-700">Digital Craft Studios</p>
+</div>
+</div>
+<div class="flex">
+<div class="w-24 flex-shrink-0 text-gray-500">2018-2020</div>
+<div>
+<h5 class="font-medium text-gray-900">Junior Developer</h5>
+<p class="text-gray-700">WebSphere Technologies</p>
+</div>
+</div>
+</div>
+</div>
+<a href="#" class="inline-flex items-center bg-gray-900 text-white px-6 py-3 !rounded-button font-medium hover:bg-gray-800 transition-colors duration-300 whitespace-nowrap">
+<i class="ri-download-line ri-lg mr-2"></i> Download Resume
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section id="skills" class="py-20 bg-white">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Skills & Expertise</h2>
+<div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+<p class="text-gray-700 mt-6 max-w-2xl mx-auto">I've developed a diverse set of skills throughout my career, focusing on web technologies and design principles.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Programming Skills -->
+<div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+<div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+<i class="ri-code-s-slash-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-4">Programming</h3>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700 font-medium">JavaScript</span>
+<span class="text-gray-600">95%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress bg-gradient-to-r from-primary to-secondary" style="width: 95%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700 font-medium">HTML/CSS</span>
+<span class="text-gray-600">90%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 90%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700 font-medium">React</span>
+<span class="text-gray-600">85%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 85%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700 font-medium">Node.js</span>
+<span class="text-gray-600">80%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 80%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700 font-medium">TypeScript</span>
+<span class="text-gray-600">75%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 75%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Design Skills -->
+<div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+<div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+<i class="ri-palette-line ri-xl text-purple-600"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-4">Design</h3>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700 font-medium">UI/UX Design</span>
+<span class="text-gray-600">90%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 90%; background-color: #9333ea;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700 font-medium">Figma</span>
+<span class="text-gray-600">85%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 85%; background-color: #9333ea;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700 font-medium">Adobe XD</span>
+<span class="text-gray-600">80%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 80%; background-color: #9333ea;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700 font-medium">Responsive Design</span>
+<span class="text-gray-600">95%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 95%; background-color: #9333ea;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700 font-medium">Photoshop</span>
+<span class="text-gray-600">70%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 70%; background-color: #9333ea;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tools & Technologies -->
+<div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+<div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-6">
+<i class="ri-tools-line ri-xl text-green-600"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-4">Tools & Technologies</h3>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700 font-medium">Git & GitHub</span>
+<span class="text-gray-600">90%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 90%; background-color: #16a34a;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700 font-medium">Webpack</span>
+<span class="text-gray-600">85%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 85%; background-color: #16a34a;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700 font-medium">Docker</span>
+<span class="text-gray-600">75%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 75%; background-color: #16a34a;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700 font-medium">CI/CD</span>
+<span class="text-gray-600">80%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 80%; background-color: #16a34a;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700 font-medium">AWS</span>
+<span class="text-gray-600">70%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 70%; background-color: #16a34a;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section id="projects" class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">My Projects</h2>
+<div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+<p class="text-gray-700 mt-6 max-w-2xl mx-auto">Here are some of my recent projects that showcase my skills and expertise.</p>
+</div>
+<!-- Project Filters -->
+<div class="flex flex-wrap justify-center gap-4 mb-12">
+<button class="px-6 py-2 !rounded-full bg-primary text-white font-medium project-filter active whitespace-nowrap" data-filter="all">All Projects</button>
+<button class="px-6 py-2 !rounded-full bg-gray-200 text-gray-700 font-medium project-filter hover:bg-gray-300 transition-colors whitespace-nowrap" data-filter="web">Web Development</button>
+<button class="px-6 py-2 !rounded-full bg-gray-200 text-gray-700 font-medium project-filter hover:bg-gray-300 transition-colors whitespace-nowrap" data-filter="ui">UI/UX Design</button>
+<button class="px-6 py-2 !rounded-full bg-gray-200 text-gray-700 font-medium project-filter hover:bg-gray-300 transition-colors whitespace-nowrap" data-filter="mobile">Mobile Apps</button>
+</div>
+<!-- Projects Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300" data-category="web">
+<div class="relative overflow-hidden h-64">
+<img src="https://readdy.ai/api/search-image?query=modern%20e-commerce%20website%20interface%20with%20clean%20design%2C%20professional%20product%20display%2C%20shopping%20cart%20functionality%2C%20responsive%20layout%2C%20high%20quality%20screenshot%20on%20desktop%20screen&width=600&height=400&seq=3&orientation=landscape" alt="E-commerce Platform" class="w-full h-full object-cover transition-transform duration-300">
+<div class="project-overlay absolute inset-0 bg-primary bg-opacity-90 flex items-center justify-center opacity-0 transition-opacity duration-300">
+<div class="text-center p-6">
+<h4 class="text-white text-xl font-bold mb-2">E-commerce Platform</h4>
+<p class="text-white text-sm mb-4">A full-featured online store with payment integration</p>
+<button class="bg-white text-primary px-4 py-2 !rounded-button font-medium hover:bg-gray-100 transition-colors whitespace-nowrap project-details-btn" data-project="project1">View Details</button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-gray-900 mb-2">E-commerce Platform</h3>
+<p class="text-gray-700 mb-4">A responsive online store built with React and Node.js</p>
+<div class="flex flex-wrap gap-2">
+<span class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">React</span>
+<span class="text-xs bg-green-100 text-green-800 px-3 py-1 rounded-full">Node.js</span>
+<span class="text-xs bg-purple-100 text-purple-800 px-3 py-1 rounded-full">MongoDB</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300" data-category="ui">
+<div class="relative overflow-hidden h-64">
+<img src="https://readdy.ai/api/search-image?query=mobile%20app%20user%20interface%20design%20for%20fitness%20tracking%20application%2C%20clean%20modern%20UI%2C%20activity%20dashboard%2C%20workout%20tracking%20screens%2C%20professional%20UI%20design%20mockup&width=600&height=400&seq=4&orientation=landscape" alt="Fitness App UI Design" class="w-full h-full object-cover transition-transform duration-300">
+<div class="project-overlay absolute inset-0 bg-primary bg-opacity-90 flex items-center justify-center opacity-0 transition-opacity duration-300">
+<div class="text-center p-6">
+<h4 class="text-white text-xl font-bold mb-2">Fitness App UI Design</h4>
+<p class="text-white text-sm mb-4">Complete UI/UX design for a fitness tracking app</p>
+<button class="bg-white text-primary px-4 py-2 !rounded-button font-medium hover:bg-gray-100 transition-colors whitespace-nowrap project-details-btn" data-project="project2">View Details</button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-gray-900 mb-2">Fitness App UI Design</h3>
+<p class="text-gray-700 mb-4">A modern UI design for a fitness tracking mobile application</p>
+<div class="flex flex-wrap gap-2">
+<span class="text-xs bg-purple-100 text-purple-800 px-3 py-1 rounded-full">Figma</span>
+<span class="text-xs bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">UI/UX</span>
+<span class="text-xs bg-red-100 text-red-800 px-3 py-1 rounded-full">Prototyping</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300" data-category="mobile">
+<div class="relative overflow-hidden h-64">
+<img src="https://readdy.ai/api/search-image?query=mobile%20app%20development%20for%20travel%20booking%20application%2C%20showing%20multiple%20screens%20with%20flight%20booking%2C%20hotel%20reservations%2C%20and%20itinerary%20planning%20features%2C%20professional%20mobile%20app%20interface&width=600&height=400&seq=5&orientation=landscape" alt="Travel Booking App" class="w-full h-full object-cover transition-transform duration-300">
+<div class="project-overlay absolute inset-0 bg-primary bg-opacity-90 flex items-center justify-center opacity-0 transition-opacity duration-300">
+<div class="text-center p-6">
+<h4 class="text-white text-xl font-bold mb-2">Travel Booking App</h4>
+<p class="text-white text-sm mb-4">A cross-platform mobile app for travel bookings</p>
+<button class="bg-white text-primary px-4 py-2 !rounded-button font-medium hover:bg-gray-100 transition-colors whitespace-nowrap project-details-btn" data-project="project3">View Details</button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-gray-900 mb-2">Travel Booking App</h3>
+<p class="text-gray-700 mb-4">A React Native app for booking flights, hotels, and activities</p>
+<div class="flex flex-wrap gap-2">
+<span class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">React Native</span>
+<span class="text-xs bg-green-100 text-green-800 px-3 py-1 rounded-full">Firebase</span>
+<span class="text-xs bg-gray-100 text-gray-800 px-3 py-1 rounded-full">Redux</span>
+</div>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300" data-category="web">
+<div class="relative overflow-hidden h-64">
+<img src="https://readdy.ai/api/search-image?query=dashboard%20interface%20for%20project%20management%20application%2C%20task%20boards%2C%20analytics%20charts%2C%20team%20collaboration%20features%2C%20professional%20web%20application%20UI%20on%20desktop%20screen&width=600&height=400&seq=6&orientation=landscape" alt="Project Management Dashboard" class="w-full h-full object-cover transition-transform duration-300">
+<div class="project-overlay absolute inset-0 bg-primary bg-opacity-90 flex items-center justify-center opacity-0 transition-opacity duration-300">
+<div class="text-center p-6">
+<h4 class="text-white text-xl font-bold mb-2">Project Management Dashboard</h4>
+<p class="text-white text-sm mb-4">A comprehensive project tracking system</p>
+<button class="bg-white text-primary px-4 py-2 !rounded-button font-medium hover:bg-gray-100 transition-colors whitespace-nowrap project-details-btn" data-project="project4">View Details</button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-gray-900 mb-2">Project Management Dashboard</h3>
+<p class="text-gray-700 mb-4">A web-based dashboard for team collaboration and task management</p>
+<div class="flex flex-wrap gap-2">
+<span class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Vue.js</span>
+<span class="text-xs bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">Express</span>
+<span class="text-xs bg-red-100 text-red-800 px-3 py-1 rounded-full">PostgreSQL</span>
+</div>
+</div>
+</div>
+<!-- Project 5 -->
+<div class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300" data-category="ui">
+<div class="relative overflow-hidden h-64">
+<img src="https://readdy.ai/api/search-image?query=banking%20application%20interface%20design%2C%20financial%20dashboard%20with%20account%20balances%2C%20transaction%20history%2C%20payment%20features%2C%20secure%20and%20professional%20fintech%20UI%20design&width=600&height=400&seq=7&orientation=landscape" alt="Banking App Redesign" class="w-full h-full object-cover transition-transform duration-300">
+<div class="project-overlay absolute inset-0 bg-primary bg-opacity-90 flex items-center justify-center opacity-0 transition-opacity duration-300">
+<div class="text-center p-6">
+<h4 class="text-white text-xl font-bold mb-2">Banking App Redesign</h4>
+<p class="text-white text-sm mb-4">UI/UX redesign for a major banking application</p>
+<button class="bg-white text-primary px-4 py-2 !rounded-button font-medium hover:bg-gray-100 transition-colors whitespace-nowrap project-details-btn" data-project="project5">View Details</button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-gray-900 mb-2">Banking App Redesign</h3>
+<p class="text-gray-700 mb-4">A complete redesign of a banking application with improved UX</p>
+<div class="flex flex-wrap gap-2">
+<span class="text-xs bg-purple-100 text-purple-800 px-3 py-1 rounded-full">Adobe XD</span>
+<span class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">UI/UX</span>
+<span class="text-xs bg-green-100 text-green-800 px-3 py-1 rounded-full">User Testing</span>
+</div>
+</div>
+</div>
+<!-- Project 6 -->
+<div class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300" data-category="mobile">
+<div class="relative overflow-hidden h-64">
+<img src="https://readdy.ai/api/search-image?query=food%20delivery%20application%20interface%20showing%20restaurant%20listings%2C%20menu%20items%2C%20order%20tracking%2C%20and%20checkout%20process%2C%20professional%20mobile%20app%20design%20for%20food%20delivery%20service&width=600&height=400&seq=8&orientation=landscape" alt="Food Delivery App" class="w-full h-full object-cover transition-transform duration-300">
+<div class="project-overlay absolute inset-0 bg-primary bg-opacity-90 flex items-center justify-center opacity-0 transition-opacity duration-300">
+<div class="text-center p-6">
+<h4 class="text-white text-xl font-bold mb-2">Food Delivery App</h4>
+<p class="text-white text-sm mb-4">A mobile application for food ordering and delivery</p>
+<button class="bg-white text-primary px-4 py-2 !rounded-button font-medium hover:bg-gray-100 transition-colors whitespace-nowrap project-details-btn" data-project="project6">View Details</button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-gray-900 mb-2">Food Delivery App</h3>
+<p class="text-gray-700 mb-4">A Flutter-based food delivery application with real-time tracking</p>
+<div class="flex flex-wrap gap-2">
+<span class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Flutter</span>
+<span class="text-xs bg-green-100 text-green-800 px-3 py-1 rounded-full">Firebase</span>
+<span class="text-xs bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">Google Maps API</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-white">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+<div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+<p class="text-gray-700 mt-6 max-w-2xl mx-auto">Have a project in mind or want to discuss potential opportunities? I'd love to hear from you!</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-12">
+<div class="w-full lg:w-1/2">
+<form id="contact-form" class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+<input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="John Doe" required>
+</div>
+<div>
+<label for="email" class="block text-gray-700 font-medium mb-2">Your Email</label>
+<input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="john@example.com" required>
+</div>
+</div>
+<div>
+<label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+<input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="Project Inquiry">
+</div>
+<div>
+<label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+<textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded resize-none focus:border-primary" placeholder="Tell me about your project..." required></textarea>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="consent" class="custom-checkbox" required>
+<label for="consent" class="ml-3 text-gray-700">I agree to the processing of my data for the purpose of contacting me.</label>
+</div>
+<button type="submit" class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-blue-600 transition-colors duration-300 whitespace-nowrap">Send Message</button>
+</form>
+</div>
+<div class="w-full lg:w-1/2">
+<div class="bg-gray-50 p-8 rounded-lg h-full">
+<h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+<i class="ri-map-pin-line ri-lg text-primary"></i>
+</div>
+<div class="ml-4">
+<h4 class="text-lg font-medium text-gray-900">Location</h4>
+<p class="text-gray-700">Bhuwana Sukhapatti Ghughuli Maharajganj Uttar Pradesh</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+<i class="ri-mail-line ri-lg text-primary"></i>
+</div>
+<div class="ml-4">
+<h4 class="text-lg font-medium text-gray-900">Email</h4>
+<a href="mailto:rk9760830@gmail.com" class="text-gray-700 hover:text-primary transition-colors">rk9760830@gmail.com</a>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+<i class="ri-phone-line ri-lg text-primary"></i>
+</div>
+<div class="ml-4">
+<h4 class="text-lg font-medium text-gray-900">Phone</h4>
+<a href="tel:+919335518478" class="text-gray-700 hover:text-primary transition-colors">+91 9335 518 478</a>
+</div>
+</div>
+<div class="flex items-start mt-6">
+<div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+<i class="ri-whatsapp-line ri-lg text-green-600"></i>
+</div>
+<div class="ml-4">
+<h4 class="text-lg font-medium text-gray-900">WhatsApp</h4>
+<a href="https://wa.me/919335518478" class="text-gray-700 hover:text-green-600 transition-colors flex items-center">
++91 9335 518 478
+<span class="ml-2 text-xs bg-green-100 text-green-600 px-2 py-1 rounded-full">Available for chat</span>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-10">
+<h4 class="text-lg font-medium text-gray-900 mb-4">Connect With Me</h4>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-black transition-colors">
+<i class="ri-github-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-blue-400 text-white rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="https://www.instagram.com/raj_beyond_limits/" target="_blank" class="w-10 h-10 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+<div class="mt-10 h-64 bg-gray-200 rounded-lg overflow-hidden">
+<img src="https://public.readdy.ai/gen_page/map_placeholder_1280x720.png" alt="Location Map" class="w-full h-full object-cover">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-8 md:mb-0">
+<h3 class="text-2xl font-bold mb-4">RAJKUMAR</h3>
+<p class="text-gray-400 max-w-md">Creating exceptional digital experiences through clean code and thoughtful design.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+<div>
+<h4 class="text-lg font-medium mb-4">Quick Links</h4>
+<ul class="space-y-2">
+<li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+<li><a href="#skills" class="text-gray-400 hover:text-white transition-colors">Skills</a></li>
+<li><a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-medium mb-4">Connect</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors flex items-center"><i class="ri-linkedin-fill mr-2"></i> LinkedIn</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors flex items-center"><i class="ri-github-fill mr-2"></i> GitHub</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors flex items-center"><i class="ri-twitter-fill mr-2"></i> Twitter</a></li>
+<li><a href="https://www.instagram.com/raj_beyond_limits/" target="_blank" class="text-gray-400 hover:text-white transition-colors flex items-center"><i class="ri-instagram-fill mr-2"></i> Instagram</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400">&copy; 2025 Rajkumar. All rights reserved.</p>
+<div class="mt-4 md:mt-0 flex space-x-6">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Back to Top Button -->
+<button id="back-to-top" class="back-to-top fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg hover:bg-blue-600 transition-all duration-300">
+<i class="ri-arrow-up-line ri-lg"></i>
+</button>
+<!-- Project Modal -->
+<div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+<div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+<div class="p-6 border-b border-gray-200 flex justify-between items-center">
+<h3 class="text-2xl font-bold text-gray-900" id="modal-title">Project Title</h3>
+<button id="close-modal" class="text-gray-500 hover:text-gray-700">
+<i class="ri-close-line ri-2x"></i>
+</button>
+</div>
+<div class="p-6" id="modal-content">
+<!-- Content will be dynamically inserted here -->
+</div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Mobile Menu Toggle
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+if (mobileMenuButton.querySelector('i').classList.contains('ri-menu-line')) {
+mobileMenuButton.querySelector('i').classList.replace('ri-menu-line', 'ri-close-line');
+} else {
+mobileMenuButton.querySelector('i').classList.replace('ri-close-line', 'ri-menu-line');
+}
+});
+// Close mobile menu when clicking on a link
+const mobileLinks = mobileMenu.querySelectorAll('a');
+mobileLinks.forEach(link => {
+link.addEventListener('click', function() {
+mobileMenu.classList.add('hidden');
+mobileMenuButton.querySelector('i').classList.replace('ri-close-line', 'ri-menu-line');
+});
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Typing Effect
+const roles = ["Web Developer", "UI/UX Designer", "Frontend Engineer", "Creative Coder"];
+const typingText = document.getElementById('typing-text');
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typingSpeed = 100;
+function typeText() {
+const currentRole = roles[roleIndex];
+if (isDeleting) {
+typingText.textContent = currentRole.substring(0, charIndex - 1);
+charIndex--;
+typingSpeed = 50;
+} else {
+typingText.textContent = currentRole.substring(0, charIndex + 1);
+charIndex++;
+typingSpeed = 100;
+}
+if (!isDeleting && charIndex === currentRole.length) {
+isDeleting = true;
+typingSpeed = 1000; // Pause at the end
+} else if (isDeleting && charIndex === 0) {
+isDeleting = false;
+roleIndex = (roleIndex + 1) % roles.length;
+typingSpeed = 300; // Pause before typing next role
+}
+setTimeout(typeText, typingSpeed);
+}
+typeText();
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Skill Bars Animation
+const skillBars = document.querySelectorAll('.skill-progress');
+function animateSkillBars() {
+skillBars.forEach(bar => {
+const targetWidth = bar.style.width;
+bar.style.width = '0%';
+setTimeout(() => {
+bar.style.width = targetWidth;
+}, 200);
+});
+}
+// Trigger animation when skills section is in view
+const skillsSection = document.getElementById('skills');
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+animateSkillBars();
+observer.unobserve(entry.target);
+}
+});
+}, { threshold: 0.2 });
+observer.observe(skillsSection);
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Project Filtering
+const filterButtons = document.querySelectorAll('.project-filter');
+const projectCards = document.querySelectorAll('.project-card');
+filterButtons.forEach(button => {
+button.addEventListener('click', function() {
+// Update active filter button
+filterButtons.forEach(btn => {
+btn.classList.remove('bg-primary', 'text-white');
+btn.classList.add('bg-gray-200', 'text-gray-700');
+});
+this.classList.remove('bg-gray-200', 'text-gray-700');
+this.classList.add('bg-primary', 'text-white');
+const filter = this.getAttribute('data-filter');
+projectCards.forEach(card => {
+if (filter === 'all' || card.getAttribute('data-category') === filter) {
+card.style.display = 'block';
+} else {
+card.style.display = 'none';
+}
+});
+});
+});
+// Project Modal
+const modal = document.getElementById('project-modal');
+const modalTitle = document.getElementById('modal-title');
+const modalContent = document.getElementById('modal-content');
+const closeModal = document.getElementById('close-modal');
+const detailButtons = document.querySelectorAll('.project-details-btn');
+// Project details data
+const projectDetails = {
+project1: {
+title: "E-commerce Platform",
+description: "A full-featured online store built with React and Node.js, featuring product listings, shopping cart, secure checkout, and admin dashboard. The platform includes payment integration with Stripe and PayPal, user authentication, and order tracking.",
+technologies: ["React", "Node.js", "Express", "MongoDB", "Redux", "Stripe API", "AWS S3"],
+features: [
+"Responsive design for all devices",
+"User authentication and profiles",
+"Product search and filtering",
+"Shopping cart and wishlist",
+"Secure payment processing",
+"Order tracking and history",
+"Admin dashboard for inventory management"
+],
+duration: "3 months",
+role: "Lead Developer",
+image: "https://readdy.ai/api/search-image?query=e-commerce%20website%20dashboard%20showing%20sales%20analytics%2C%20product%20management%20interface%2C%20order%20processing%20system%2C%20professional%20admin%20panel%20design&width=800&height=500&seq=9&orientation=landscape"
+},
+project2: {
+title: "Fitness App UI Design",
+description: "A comprehensive UI/UX design project for a fitness tracking mobile application. The design focuses on creating an intuitive and engaging user experience for tracking workouts, nutrition, and progress. The project included user research, wireframing, prototyping, and user testing.",
+technologies: ["Figma", "Adobe XD", "Illustrator", "Prototyping", "User Testing"],
+features: [
+"Clean and modern interface",
+"Intuitive workout tracking",
+"Nutrition and meal planning",
+"Progress visualization with charts",
+"Social sharing and community features",
+"Personalized workout recommendations",
+"Dark and light mode themes"
+],
+duration: "6 weeks",
+role: "UI/UX Designer",
+image: "https://readdy.ai/api/search-image?query=fitness%20mobile%20app%20UI%20design%20showing%20workout%20tracking%20screen%2C%20nutrition%20logging%20interface%2C%20progress%20charts%2C%20and%20user%20profile%2C%20professional%20UI%20mockup&width=800&height=500&seq=10&orientation=landscape"
+},
+project3: {
+title: "Travel Booking App",
+description: "A cross-platform mobile application built with React Native for booking flights, hotels, and activities. The app integrates with multiple travel APIs to provide real-time availability and pricing, along with secure payment processing and booking management.",
+technologies: ["React Native", "Firebase", "Redux", "Google Maps API", "Travel APIs", "Stripe"],
+features: [
+"Flight search and booking",
+"Hotel reservations",
+"Activity and tour bookings",
+"Itinerary planning and management",
+"Real-time notifications",
+"Offline access to bookings",
+"Multi-currency support"
+],
+duration: "4 months",
+role: "Mobile Developer",
+image: "https://readdy.ai/api/search-image?query=travel%20booking%20app%20showing%20flight%20search%20results%2C%20hotel%20listings%2C%20booking%20confirmation%20screen%2C%20and%20itinerary%20view%2C%20professional%20mobile%20app%20interface&width=800&height=500&seq=11&orientation=landscape"
+},
+project4: {
+title: "Project Management Dashboard",
+description: "A web-based dashboard for team collaboration and project management. The application allows teams to track tasks, manage resources, and visualize project progress through interactive charts and Kanban boards.",
+technologies: ["Vue.js", "Express", "PostgreSQL", "Chart.js", "Socket.io", "Docker"],
+features: [
+"Task management with Kanban boards",
+"Team collaboration and messaging",
+"Resource allocation and tracking",
+"Project timeline visualization",
+"Real-time updates and notifications",
+"File sharing and document management",
+"Performance analytics and reporting"
+],
+duration: "3 months",
+role: "Full Stack Developer",
+image: "https://readdy.ai/api/search-image?query=project%20management%20dashboard%20showing%20task%20boards%2C%20team%20collaboration%20features%2C%20project%20timeline%2C%20and%20analytics%20charts%2C%20professional%20web%20application%20interface&width=800&height=500&seq=12&orientation=landscape"
+},
+project5: {
+title: "Banking App Redesign",
+description: "A complete UI/UX redesign for a major banking application, focusing on improving usability, accessibility, and visual appeal. The project involved extensive user research, competitive analysis, and iterative design process with user testing at each stage.",
+technologies: ["Adobe XD", "Sketch", "Prototyping", "User Testing", "Accessibility Standards"],
+features: [
+"Simplified account management",
+"Intuitive transaction history",
+"Secure payment and transfer flows",
+"Financial insights and budgeting tools",
+"Personalized recommendations",
+"Biometric authentication",
+"Accessibility improvements"
+],
+duration: "2 months",
+role: "Lead UI/UX Designer",
+image: "https://readdy.ai/api/search-image?query=banking%20application%20interface%20showing%20account%20dashboard%2C%20transaction%20history%2C%20payment%20screen%2C%20and%20financial%20insights%2C%20professional%20fintech%20UI%20design&width=800&height=500&seq=13&orientation=landscape"
+},
+project6: {
+title: "Food Delivery App",
+description: "A Flutter-based food delivery application with real-time order tracking, restaurant discovery, and secure payment processing. The app includes features like restaurant ratings, order history, and personalized recommendations.",
+technologies: ["Flutter", "Firebase", "Google Maps API", "Payment Gateways", "Push Notifications"],
+features: [
+"Restaurant discovery and filtering",
+"Menu browsing and customization",
+"Real-time order tracking",
+"Multiple payment options",
+"Ratings and reviews system",
+"Order history and reordering",
+"Promotional offers and discounts"
+],
+duration: "3 months",
+role: "Mobile App Developer",
+image: "https://readdy.ai/api/search-image?query=food%20delivery%20app%20showing%20restaurant%20listings%2C%20menu%20items%2C%20checkout%20process%2C%20and%20order%20tracking%20map%20view%2C%20professional%20mobile%20app%20interface&width=800&height=500&seq=14&orientation=landscape"
+}
+};
+detailButtons.forEach(button => {
+button.addEventListener('click', function() {
+const projectId = this.getAttribute('data-project');
+const project = projectDetails[projectId];
+modalTitle.textContent = project.title;
+let content = `
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div>
+<img src="${project.image}" alt="${project.title}" class="w-full h-auto rounded-lg">
+</div>
+<div>
+<p class="text-gray-700 mb-6">${project.description}</p>
+<div class="mb-4">
+<h4 class="text-lg font-semibold text-gray-900 mb-2">Technologies Used</h4>
+<div class="flex flex-wrap gap-2">
+${project.technologies.map(tech => `<span class="text-sm bg-blue-100 text-blue-800 px-3 py-1 rounded-full">${tech}</span>`).join('')}
+</div>
+</div>
+<div class="mb-4">
+<h4 class="text-lg font-semibold text-gray-900 mb-2">Key Features</h4>
+<ul class="list-disc pl-5 text-gray-700 space-y-1">
+${project.features.map(feature => `<li>${feature}</li>`).join('')}
+</ul>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<h4 class="text-lg font-semibold text-gray-900 mb-1">Duration</h4>
+<p class="text-gray-700">${project.duration}</p>
+</div>
+<div>
+<h4 class="text-lg font-semibold text-gray-900 mb-1">My Role</h4>
+<p class="text-gray-700">${project.role}</p>
+</div>
+</div>
+</div>
+</div>
+`;
+modalContent.innerHTML = content;
+modal.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+});
+});
+closeModal.addEventListener('click', function() {
+modal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+});
+// Close modal when clicking outside
+window.addEventListener('click', function(event) {
+if (event.target === modal) {
+modal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Contact Form Submission
+const contactForm = document.getElementById('contact-form');
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+// Simulate form submission
+const submitButton = this.querySelector('button[type="submit"]');
+const originalText = submitButton.textContent;
+submitButton.textContent = 'Sending...';
+submitButton.disabled = true;
+setTimeout(() => {
+// Show success message
+const formElements = contactForm.querySelectorAll('input, textarea, button');
+formElements.forEach(el => el.disabled = true);
+const successMessage = document.createElement('div');
+successMessage.className = 'bg-green-100 text-green-800 p-4 rounded mt-4';
+successMessage.innerHTML = '<p class="font-medium">Message sent successfully!</p><p>Thank you for reaching out. I\'ll get back to you soon.</p>';
+contactForm.appendChild(successMessage);
+// Reset form after delay
+setTimeout(() => {
+contactForm.reset();
+formElements.forEach(el => el.disabled = false);
+contactForm.removeChild(successMessage);
+submitButton.textContent = originalText;
+}, 3000);
+}, 1500);
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Back to Top Button
+const backToTopButton = document.getElementById('back-to-top');
+window.addEventListener('scroll', function() {
+if (window.pageYOffset > 300) {
+backToTopButton.classList.add('show');
+} else {
+backToTopButton.classList.remove('show');
+}
+});
+backToTopButton.addEventListener('click', function() {
+window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+// Header Scroll Effect
+const header = document.querySelector('header');
+window.addEventListener('scroll', function() {
+if (window.pageYOffset > 50) {
+header.classList.add('py-2', 'shadow');
+header.classList.remove('py-4');
+} else {
+header.classList.add('py-4');
+header.classList.remove('py-2', 'shadow');
+}
+});
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+const headerHeight = document.querySelector('header').offsetHeight;
+const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+window.scrollTo({
+top: targetPosition,
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+</body>
+</html>to 
